@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import UIKit
 
 class Test2UITests: XCTestCase {
 
@@ -40,4 +41,5 @@ class Test2UITests: XCTestCase {
             }
         }
     }
+    
 }

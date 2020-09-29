@@ -7,8 +7,33 @@
 //
 
 import UIKit
+import Foundation
+import LocalAuthentication
 
 class LoginViewController: UITableViewController {
+    
+    
+    @IBAction func button(_ sender: Any)
+    {
+        let context:LAContext = LAContext()
+        
+        if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil){
+            context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Message") { (good, errpr) in
+                if good{
+                    print("Good")
+                }else{
+                    print("Try Again")
+                }
+            }
+        }
+        
+        
+        
+        
+        
+        
+    }
+    
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -104,5 +129,7 @@ class LoginViewController: UITableViewController {
         sender: Any) {
         
     }
-
+   
+  
 }
+
